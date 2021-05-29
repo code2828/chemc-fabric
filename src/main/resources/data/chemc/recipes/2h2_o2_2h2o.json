@@ -1,0 +1,16 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "chemc:hydrogen"
+        },
+        {
+            "item": "chemc:oxygen"
+        }
+    ],
+    "result":
+    {
+        "item": "minecraft:water_bottle",
+        "count": 2
+    }
+}

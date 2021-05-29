@@ -1,0 +1,7 @@
+{
+    "variants": {
+        "": [
+            { "model": "chemc:block/lithium_block" }
+        ]
+    }
+}

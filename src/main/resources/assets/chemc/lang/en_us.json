@@ -1,0 +1,15 @@
+{
+    "item.chemc.hydrogen": "Hydrogen [H2(g)]",
+    "item.chemc.oxygen": "Oxygen [O2(g)]",
+    "item.chemc.nitrogen": "Nitrogen [N2(g)]",
+    "item.chemc.chlorine": "Chlorine [Cl2(g)]",
+    "item.chemc.hydrogen_chloride": "Hydrogen Chloride [HCl(g)]",
+    "item.chemc.lithium_ingot": "Lithium Ingot [Li(s)]",
+    "item.chemc.lithium_pickaxe": "Lithium Pickaxe",
+    "item.chemc.lithium_axe": "Lithium Axe",
+    "item.chemc.lithium_sword": "Lithium Sword",
+    "item.chemc.lithium_hoe": "Lithium Hoe",
+    "item.chemc.lithium_shovel": "Litium Shovel",
+    "block.chemc.lithium_block": "Lithium Block",
+    "block.chemc.lithium_ore": "Lithium Ore"
+}

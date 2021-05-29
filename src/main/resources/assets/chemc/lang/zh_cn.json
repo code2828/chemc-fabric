@@ -1,0 +1,15 @@
+{
+    "item.chemc.hydrogen": "氢气 [H2(g)]",
+    "item.chemc.oxygen": "氧气 [O2(g)]",
+    "item.chemc.nitrogen": "氮气 [N2(g)]",
+    "item.chemc.chlorine": "氯气 [Cl2(g)]",
+    "item.chemc.hydrogen_chloride": "氯化氢 [HCl(g)]",
+    "item.chemc.lithium_ingot": "锂锭 [Li(s)]",
+    "item.chemc.lithium_pickaxe": "锂镐",
+    "item.chemc.lithium_axe": "锂斧",
+    "item.chemc.lithium_sword": "锂剑",
+    "item.chemc.lithium_hoe": "锂锄",
+    "item.chemc.lithium_shovel": "锂铲",
+    "block.chemc.lithium_block": "锂块",
+    "block.chemc.lithium_ore": "锂矿石"
+}

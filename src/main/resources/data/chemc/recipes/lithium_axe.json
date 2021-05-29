@@ -1,0 +1,25 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern":
+    [
+        "xx ",
+        "x| ",
+        " | "
+    ],
+    "key":
+    {
+        "x":
+        {
+            "item": "chemc:lithium_ingot"
+        },
+        "|":
+        {
+            "item": "minecraft:stick"
+        }
+    },
+    "result":
+    {
+        "item": "chemc:lithium_axe",
+        "count": 1
+    }
+}

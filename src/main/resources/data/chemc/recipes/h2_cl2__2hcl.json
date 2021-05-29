@@ -1,0 +1,16 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "chemc:hydrogen"
+        },
+        {
+            "item": "chemc:chlorine"
+        }
+    ],
+    "result":
+    {
+        "item": "chemc:hydrogen_chloride",
+        "count": 2
+    }
+}
