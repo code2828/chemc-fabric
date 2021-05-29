@@ -11,5 +11,6 @@
     "item.chemc.lithium_hoe": "Lithium Hoe",
     "item.chemc.lithium_shovel": "Litium Shovel",
     "block.chemc.lithium_block": "Lithium Block",
-    "block.chemc.lithium_ore": "Lithium Ore"
+    "block.chemc.lithium_ore": "Lithium Ore",
+    "item.chemc.lithium_chloride": "Lithium Chloride [LiCl(s)]"
 }

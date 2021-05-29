@@ -3,11 +3,11 @@
     "pools": [
       {
         "name": "lithium_ore",
-        "rolls": 1,
+        "rolls": 6,
         "entries": [
           {
             "type": "minecraft:item",
-            "name": "chemc:lithium_ore"
+            "name": "chemc:lithium_chloride"
           }
         ],
         "conditions": [

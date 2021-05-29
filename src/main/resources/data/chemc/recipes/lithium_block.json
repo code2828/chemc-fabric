@@ -1,0 +1,21 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern":
+    [
+        "xxx",
+        "xxx",
+        "xxx"
+    ],
+    "key":
+    {
+        "x":
+        {
+            "item": "chemc:lithium_ingot"
+        }
+    },
+    "result":
+    {
+        "item": "chemc:lithium_block",
+        "count": 1
+    }
+}

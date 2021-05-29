@@ -1,9 +1,8 @@
-# Fabric Example Mod
+# CheMC
+CheMC is a chemistry mod for *Minecraft* that aims to be as scientific as possible.
 
-## Setup
+## Downloads
+* [v1.0.0](https://github.com/code2828/chemc-fabric/releases/tag/v1.0.0) (May. 29th, 2021, `1.16.5`)
 
-For setup instructions please see the [fabric wiki page](https://fabricmc.net/wiki/tutorial:setup) that relates to the IDE that you are using.
-
-## License
-
-This template is available under the CC0 license. Feel free to learn from it and incorporate it in your own projects.
+## TODO:
+1. Add Beryllium (~v1.1)
