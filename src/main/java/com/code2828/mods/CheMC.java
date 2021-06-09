@@ -12,7 +12,6 @@ import net.fabricmc.fabric.api.biome.v1.BiomeSelectors;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.Block;
-import net.minecraft.block.Blocks;
 import net.minecraft.block.Material;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
@@ -106,7 +105,7 @@ public class CheMC implements ModInitializer {
     private static final ConfiguredFeature<?, ?> ORE_LiCl_O = Feature.ORE
             .configure(new OreFeatureConfig(OreFeatureConfig.Rules.BASE_STONE_OVERWORLD,
                     LiCl_ORE.getDefaultState(), 5)) // vein size
-            .decorate(Decorator.RANGE.configure(new RangeDecoratorConfig(0,2,128))).spreadHorizontally().repeat(60); // number of veins per chunk
+            .decorate(Decorator.RANGE.configure(new RangeDecoratorConfig(HeightProvider.create(YOffset.fixed(0),YOffset.fixed(128))))).spreadHorizontally().repeat(60); // number of veins per chunk
 
     @Override
     public void onInitialize() {
