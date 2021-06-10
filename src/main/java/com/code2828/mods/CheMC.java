@@ -32,6 +32,8 @@ import net.minecraft.world.gen.decorator.RangeDecoratorConfig;
 import net.minecraft.world.gen.feature.ConfiguredFeature;
 import net.minecraft.world.gen.feature.Feature;
 import net.minecraft.world.gen.feature.OreFeatureConfig;
+import net.minecraft.world.gen.YOffset;
+import net.minecraft.world.gen.heightprovider.UniformHeightProvider;
 
 public class CheMC implements ModInitializer {
     public enum MetalMaterials implements ToolMaterial {
@@ -105,11 +107,11 @@ public class CheMC implements ModInitializer {
     private static final ConfiguredFeature<?, ?> ORE_LiCl_O = Feature.ORE
             .configure(new OreFeatureConfig(OreFeatureConfig.Rules.BASE_STONE_OVERWORLD,
                     LiCl_ORE.getDefaultState(), 5)) // vein size
-            .decorate(Decorator.RANGE.configure(new RangeDecoratorConfig(0,2,128))).spreadHorizontally().repeat(60); // number of veins per chunk
+            .decorate(Decorator.RANGE.configure(new RangeDecoratorConfig(UniformHeightProvider.create(YOffset.fixed(0),YOffset.fixed(128)))).spreadHorizontally().repeat(60)); // number of veins per chunk
 
     @Override
     public void onInitialize() {
-        RegistryKey<ConfiguredFeature<?, ?>> oreLiClO = RegistryKey.of(Registry.CONFIGURED_FEATURE_WORLDGEN,
+        RegistryKey<ConfiguredFeature<?, ?>> oreLiClO = RegistryKey.of(Registry.CONFIGURED_FEATURE_KEY,
                 new Identifier("chemc", "ore_licl_o"));
         Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, oreLiClO.getValue(), ORE_LiCl_O);
         BiomeModifications.addFeature(BiomeSelectors.foundInOverworld(), GenerationStep.Feature.UNDERGROUND_ORES,

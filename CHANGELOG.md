@@ -1,4 +1,4 @@
-## 1.0.0&nbsp;&nbsp;&nbsp; `Lithium Update`
+## 1.0.0 & 3.0.0&nbsp;&nbsp;&nbsp; `Lithium Update`
 * Added lithium ingot, lithium chloride dust, the five lithium tools.
 * Added lithium block and lithium ore.
 * Lithium ore drop 6 lithium chloride blocks when mined without silk touch.
