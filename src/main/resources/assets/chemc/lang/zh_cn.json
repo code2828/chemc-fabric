@@ -1,8 +1,8 @@
 {
-    "item.chemc.hydrogen": "氢气 [H2(g)]",
-    "item.chemc.oxygen": "氧气 [O2(g)]",
-    "item.chemc.nitrogen": "氮气 [N2(g)]",
-    "item.chemc.chlorine": "氯气 [Cl2(g)]",
+    "item.chemc.hydrogen": "氢气 [H₂(g)]",
+    "item.chemc.oxygen": "氧气 [O₂(g)]",
+    "item.chemc.nitrogen": "氮气 [N₂(g)]",
+    "item.chemc.chlorine": "氯气 [Cl₂(g)]",
     "item.chemc.hydrogen_chloride": "氯化氢 [HCl(g)]",
     "item.chemc.lithium_ingot": "锂锭 [Li(s)]",
     "item.chemc.lithium_pickaxe": "锂镐",

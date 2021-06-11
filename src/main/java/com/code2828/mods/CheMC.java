@@ -39,7 +39,10 @@ public class CheMC implements ModInitializer {
     public enum MetalMaterials implements ToolMaterial {
         SOFT_METAL(1, 24, 10, 0.1F, 25, () -> {
             return Ingredient.ofItems(new ItemConvertible[] { CheMC.Li_INGOT });
-        });
+        }),
+	COMMON_METAL(1, 500, 7, 1, 17, () -> {
+	    return Ingredient.ofItems(new ItemConvertible[] { CheMC.Zn_INGOT });
+	});
 
         private final int miningLevel;
         private final int itemDurability;
@@ -100,6 +103,7 @@ public class CheMC implements ModInitializer {
     public static final Item O2_GLASS = new Item(new FabricItemSettings().group(ItemGroup.MISC));
     public static final Item Cl2_GLASS = new Item(new FabricItemSettings().group(ItemGroup.MISC));
     public static final Item LiCl_DUST = new Item(new FabricItemSettings().group(ItemGroup.MISC));
+    public static final Item Zn_INGOT = new Item(new FabricItemSettings().group(ItemGroup.MISC));
 
     public static final Block Li_BLOCK = new Block(FabricBlockSettings.of(Material.METAL).strength(1.4f));
     public static final Block LiCl_ORE = new Block(FabricBlockSettings.of(Material.STONE).strength(1.0f));
@@ -108,7 +112,14 @@ public class CheMC implements ModInitializer {
             .configure(new OreFeatureConfig(OreFeatureConfig.Rules.BASE_STONE_OVERWORLD,
                     LiCl_ORE.getDefaultState(), 5)) // vein size
             .decorate(Decorator.RANGE.configure(new RangeDecoratorConfig(UniformHeightProvider.create(YOffset.fixed(0),YOffset.fixed(128)))).spreadHorizontally().repeat(60)); // number of veins per chunk
-
+    
+    public void registerItem(String identifier, Item item_) {
+	Registry.register(Registry.ITEM, new Identifier("chemc", identifier), item_);
+    }
+    public void registerBABI(String identifier, Block block_, ItemGroup gruop) { // Block And BlockItem; intended typo
+	Registry.register(Registry.BLOCK, new Identifier("chemc", identifier), block_);
+	Registry.register(Registry.ITEM, new Identifier("chemc", identifier), new BlockItem(block_, new FabricItemSettings().group(gruop)));
+    }
     @Override
     public void onInitialize() {
         RegistryKey<ConfiguredFeature<?, ?>> oreLiClO = RegistryKey.of(Registry.CONFIGURED_FEATURE_KEY,
@@ -117,25 +128,21 @@ public class CheMC implements ModInitializer {
         BiomeModifications.addFeature(BiomeSelectors.foundInOverworld(), GenerationStep.Feature.UNDERGROUND_ORES,
                 oreLiClO);
 
-        Registry.register(Registry.ITEM, new Identifier("chemc", "lithium_ingot"), Li_INGOT);
-        Registry.register(Registry.ITEM, new Identifier("chemc", "lithium_sword"), Li_SWORD);
-        Registry.register(Registry.ITEM, new Identifier("chemc", "lithium_pickaxe"), Li_PICKAXE);
-        Registry.register(Registry.ITEM, new Identifier("chemc", "lithium_hoe"), Li_HOE);
-        Registry.register(Registry.ITEM, new Identifier("chemc", "lithium_axe"), Li_AXE);
-        Registry.register(Registry.ITEM, new Identifier("chemc", "lithium_shovel"), Li_SHOVEL);
-        Registry.register(Registry.ITEM, new Identifier("chemc", "hydrogen"), H2_GLASS);
-        Registry.register(Registry.ITEM, new Identifier("chemc", "oxygen"), O2_GLASS);
-        Registry.register(Registry.ITEM, new Identifier("chemc", "nitrogen"), N2_GLASS);
-        Registry.register(Registry.ITEM, new Identifier("chemc", "hydrogen_chloride"), HCl_GLASS);
-        Registry.register(Registry.ITEM, new Identifier("chemc", "chlorine"), Cl2_GLASS);
-        Registry.register(Registry.ITEM, new Identifier("chemc", "lithium_chloride"), LiCl_DUST);
-
-        Registry.register(Registry.BLOCK, new Identifier("chemc", "lithium_block"), Li_BLOCK);
-        Registry.register(Registry.BLOCK, new Identifier("chemc", "lithium_ore"), LiCl_ORE);
-
-        Registry.register(Registry.ITEM, new Identifier("chemc", "lithium_block"),
-                new BlockItem(Li_BLOCK, new FabricItemSettings().group(ItemGroup.BUILDING_BLOCKS)));
-        Registry.register(Registry.ITEM, new Identifier("chemc", "lithium_ore"),
-                new BlockItem(LiCl_ORE, new FabricItemSettings().group(ItemGroup.DECORATIONS)));
+	registerItem("lithium_ingot",	    Li_INGOT);
+	registerItem("lithium_sword",	    Li_SWORD);
+	registerItem("lithium_pickaxe",	    Li_PICKAXE);
+	registerItem("lithium_hoe",	    Li_HOE);
+	registerItem("lithium_axe",	    Li_AXE);
+	registerItem("lithium_shovel",	    Li_SHOVEL);
+	registerItem("hydrogen",	    H2_GLASS);
+	registerItem("oxygen",		    O2_GLASS);
+	registerItem("nitrogen",	    N2_GLASS);
+	registerItem("hydrogen_chloride",   HCl_GLASS);
+	registerItem("chlorine",	    Cl2_GLASS);
+	registerItem("lithium_chloride",    LiCl_DUST);
+	registerItem("zinc_ingot",	    Zn_INGOT);
+	
+	registerBABI("lithium_ore",	    LiCl_ORE, ItemGroup.BUILDING_BLOCKS);
+	registerBABI("lithium_block",	    Li_BLOCK, ItemGroup.BUILDING_BLOCKS);
     }
 }
