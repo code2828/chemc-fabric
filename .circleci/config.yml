@@ -33,7 +33,7 @@ jobs:
 
       - run: ./gradlew jar
       - store_artifacts:
-          path: build/libs/*
+          path: build/libs/chemc-3.0.1-pre-dev.jar
 
       - save_cache:
           paths:
