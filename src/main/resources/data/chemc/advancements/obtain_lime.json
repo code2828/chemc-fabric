@@ -1,0 +1,36 @@
+{
+    "parent": "chemc:obtaining",
+    "display": {
+        "icon": {
+            "item": "chemc:lime_dust"
+        },
+        "title": "Dry stuff",
+        "description": "Obtain lime dust from blasting stones",
+        "frame": "task",
+        "show_toast": true,
+        "announce_to_chat": true,
+        "hidden": false
+    },
+    "criteria": {
+        "obtain_lime": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "items": [
+                            "chemc:lime_dust"
+                        ],
+                        "count": {
+                            "min": 1
+                        }
+                    }
+                ]
+            }
+        }
+    },
+    "requirements": [
+        [
+            "obtain_lime"
+        ]
+    ]
+}
