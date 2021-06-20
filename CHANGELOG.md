@@ -1,3 +1,15 @@
+## 3.0.90&nbsp;&nbsp;&nbsp; `Zinc Update Prerelease`
+* Added sphalerite (ZnS).
+* Removed "Lithium Ore", replaced it with "spodumene" (LiAl[Si2O6]).
+* Added lime and hydrated lime.
+* Added blast recipe: stone -> lime.
+* Not all textures have been added.
+* No zinc tools have been added.
+* Added a stub for future chemical reaction JSON and the Recipes class (types).
+
+## 3.0.1&nbsp;&nbsp;&nbsp; `Lithium-Zinc Prerelease`
+* Added zinc ingot, no zinc ore yet.
+
 ## 1.0.0 & 3.0.0&nbsp;&nbsp;&nbsp; `Lithium Update`
 * Added lithium ingot, lithium chloride dust, the five lithium tools.
 * Added lithium block and lithium ore.
