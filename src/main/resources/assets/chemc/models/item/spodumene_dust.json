@@ -1,6 +1,6 @@
 {
     "parent": "item/generated",
     "textures": {
-        "layer0": "chemc:item/lithium_chloride"
+        "layer0": "chemc:item/spodumene_dust"
      }
 }

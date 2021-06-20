@@ -3,7 +3,7 @@
         "icon": {
             "item": "chemc:hydrogen"
         },
-        "title": "Obtaning",
+        "title": "Obtaining",
         "description": "The core of chemistry",
         "frame": "task",
         "show_toast": true,

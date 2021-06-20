@@ -1,10 +1,9 @@
 {
     "type": "minecraft:blasting",
-    "ingredients": [
-        {
-            "item": "minecraft:stone"
-        }
-    ],
+    "ingredient":
+    {
+        "item": "minecraft:stone"
+    },
     "result": "chemc:lime_dust",
     "experience": 1.0,
     "cookingtime": 400
