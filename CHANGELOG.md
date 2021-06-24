@@ -1,3 +1,6 @@
+## 4.0.0&nbsp;&nbsp;&nbsp; `1.17.1-pre1 Initial release`
+* This release is identical to v3.0.90, only that it can be used in 1.17.1-pre1
+
 ## 3.0.90&nbsp;&nbsp;&nbsp; `Zinc Update Prerelease`
 * Added sphalerite (ZnS).
 * Removed "Lithium Ore", replaced it with "spodumene" (LiAl[Si2O6]).
