@@ -19,7 +19,7 @@ Active | 1.x(1.16.5), 3.x(1.17)
 Discontinued   | 2.x(1.17-pre1)
 Finished|none
 Old|none
-Future|4.x(1.17.1)
+Future|4.x(1.17.1-pre1)
 
 ## Versioning convension
 * Major version number: Increases 1 for each new Minecraft snapshot or release that I decided to release my mod on.
@@ -29,5 +29,5 @@ Future|4.x(1.17.1)
 * * (>50) Prelease for the next update.
 
 ## Todo
-1. Add Copper and Zinc in 1.16.5 version (~v1.1)
-2. Add Zinc in 1.17 versions (~v3.2)
+1. Add Copper and Zinc in 1.16.5 version (~v1.2)
+2. Add Zinc in 1.17 versions (~v3.1)
