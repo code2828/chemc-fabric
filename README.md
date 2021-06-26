@@ -7,6 +7,7 @@ CheMC is a chemistry mod for *Minecraft* that aims to be as scientific as possib
   - [Versioning convension](#versioning-convension)
   - [Todo](#todo)
 ## Downloads
+Some of these are also avaliable on [curseforge](https://www.curseforge.com/minecraft/mc-mods/chemc/files), but not all of them.
 * [v4.0.0](https://github.com/code2828/chemc-fabric/releases/tag/v4.0.0) (Jun. 24th, 2021, `1.17.1-pre1`)
 * [v3.0.90](https://github.com/code2828/chemc-fabric/releases/tag/v3.0.90) (Jun. 20th, 2021, `1.17`)
 * [v3.0.1](https://github.com/code2828/chemc-fabric/releases/tag/v3.0.1) (Jun. 16th, 2021, `1.17`)
