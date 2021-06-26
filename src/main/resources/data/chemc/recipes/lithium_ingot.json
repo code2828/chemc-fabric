@@ -1,21 +1,13 @@
 {
-    "type": "minecraft:crafting_shaped",
-    "pattern":
-    [
-        "xxx",
-        "xxx",
-        "xxx"
-    ],
-    "key":
-    {
-        "x":
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
         {
-            "item": "chemc:lithium_chloride"
+            "item": "chemc:lithium_block"
         }
-    },
+    ],
     "result":
     {
         "item": "chemc:lithium_ingot",
-        "count": 1
+        "count": 2
     }
 }

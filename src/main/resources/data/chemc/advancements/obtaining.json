@@ -1,0 +1,14 @@
+{
+    "display": {
+        "icon": {
+            "item": "chemc:hydrogen"
+        },
+        "title": "Obtaining",
+        "description": "The core of chemistry",
+        "frame": "task",
+        "show_toast": true,
+        "announce_to_chat": true,
+        "hidden": false
+    },
+    "requirements": null
+}
