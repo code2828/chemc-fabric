@@ -1,8 +1,6 @@
 package com.code2828.mods;
 
-import com.code2828.mods._Tools._AxeItem;
-import com.code2828.mods._Tools._HoeItem;
-import com.code2828.mods._Tools._PickaxeItem;
+import com.code2828.mods._Tools.*;
 import java.util.function.Supplier;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.biome.v1.BiomeModifications;
