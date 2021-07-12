@@ -1,0 +1,10 @@
+{
+    "type": "heat",
+    "temperature": 900,
+    "reacts": [
+        {
+            "unlocalized_name": "hydrogen",
+            "formula": "H2"
+        }
+    ]
+}
