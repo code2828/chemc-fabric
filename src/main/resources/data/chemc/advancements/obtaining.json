@@ -10,5 +10,20 @@
         "announce_to_chat": true,
         "hidden": false
     },
-    "requirements": null
+    "criteria": {
+        "obtaining": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "items": ["chemc:lime_dust", "chemc:lithium_ingot", "chemc:zinc_ingot"],
+                        "count": {
+                            "min": 1
+                        }
+                    }
+                ]
+            }
+        }
+    },
+    "requirements": [["obtaining"]]
 }

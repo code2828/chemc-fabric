@@ -10,8 +10,15 @@
     "item.chemc.lithium_sword": "Lithium Sword",
     "item.chemc.lithium_hoe": "Lithium Hoe",
     "item.chemc.lithium_shovel": "Litium Shovel",
+    "item.chemc.spodumene_nugget": "Spodumene Nugget",
+    "item.chemc.spodumene_dust": "Spodumene Dust",
+    "item.chemc.zinc_ingot": "Zinc Ingot [Zn(s)]",
+    "item.chemc.lime_dust": "Lime Dust [CaO(s)]",
+    "item.chemc.hydrated_lime_dust": "Hydrated Lime Dust [Ca(OH)₂(s)]",
+    "item.chemc.sphalerite_nugget": "Sphalerite Nugget [ZnS(s)]",
+
     "block.chemc.lithium_block": "Lithium Block",
-    "block.chemc.lithium_ore": "Lithium Ore",
-    "item.chemc.lithium_chloride": "Lithium Chloride [LiCl(s)]",
-    "item.chemc.zinc_ingot": "Zinc Ingot [Zn(s)]"
+    "block.chemc.spodumene": "Spodumene",
+    "block.chemc.zinc_block": "Zinc Block",
+    "block.chemc.sphalerite": "Sphalerite [ZnS(s)]"
 }

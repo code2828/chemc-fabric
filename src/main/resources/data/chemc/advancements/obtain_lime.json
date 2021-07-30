@@ -17,9 +17,7 @@
             "conditions": {
                 "items": [
                     {
-                        "items": [
-                            "chemc:lime_dust"
-                        ],
+                        "items": ["chemc:lime_dust"],
                         "count": {
                             "min": 1
                         }
@@ -28,9 +26,5 @@
             }
         }
     },
-    "requirements": [
-        [
-            "obtain_lime"
-        ]
-    ]
+    "requirements": [["obtain_lime"]]
 }

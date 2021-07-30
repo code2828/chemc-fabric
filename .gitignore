@@ -35,3 +35,5 @@ run/
 
 
 tmp/
+
+.gradle_cache_*/
