@@ -23,7 +23,7 @@ Active | 1.x(1.16.5), 3.x(1.17), 5.x(1.17.1)
 Discontinued   | 2.x(1.17-pre1), 4.x(1.17.1-pre1)
 Finished|none
 Old|none
-Future|6.x(21w???)
+Future|6.x(1.18_experimental-snapshot-2/21w??x)
 
 ## Versioning convension
 * Major version number: Increases 1 for each new Minecraft snapshot or release that I decided to release my mod on.
@@ -36,7 +36,7 @@ Future|6.x(21w???)
 ### Items & Blocks
 1. Add Copper and Zinc in 1.16.5 version (~v1.2)
 2. Add Zinc in 1.17 versions (~v3.1)
-3. Add Sickle and Hammer (hmmmm... what's that?)
+3. Add Sickle(to remove leaves) and Hammer(as in Tinker's Construct) (hmmmm... what's that?)
 ### Languages
 * Deutsch, English (United Kindom), 文言（華夏） bef. 2022.1.1
 * 繁体中文（臺灣）、繁体中文（香港） bef. 2022.1.1
