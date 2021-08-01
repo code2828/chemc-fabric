@@ -1,6 +1,8 @@
 package com.code2828.mods;
 
 import com.code2828.mods._Tools.*;
+import com.code2828.mods.mixin.*;
+
 import java.util.function.Supplier;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.biome.v1.BiomeModifications;
@@ -22,17 +24,11 @@ import net.minecraft.util.Lazy;
 import net.minecraft.util.registry.BuiltinRegistries;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.util.registry.RegistryKey;
-import net.minecraft.world.gen.GenerationStep;
-// import net.minecraft.world.gen.YOffset;
 import net.minecraft.world.gen.decorator.Decorator;
 import net.minecraft.world.gen.decorator.RangeDecoratorConfig;
 import net.minecraft.world.gen.feature.ConfiguredFeature;
 import net.minecraft.world.gen.feature.Feature;
 import net.minecraft.world.gen.feature.OreFeatureConfig;
-import net.minecraft.world.biome.GenerationSettings;
-import net.minecraft.world.gen.feature.DefaultBiomeFeatures;
-
-// import net.minecraft.world.gen.heightprovider.UniformHeightProvider;
 
 public class CheMC implements ModInitializer {
 
@@ -51,7 +47,8 @@ public class CheMC implements ModInitializer {
         );
 
         // prettier-ignore-end
-    private final int miningLevel;
+        
+        private final int miningLevel;
         private final int itemDurability;
         private final float miningSpeed;
         private final float attackDamage;
@@ -121,11 +118,7 @@ public class CheMC implements ModInitializer {
     public static final Block Zn_BLOCK = new Block(FabricBlockSettings.of(Material.METAL).strength(h2h(2.5)));
     public static final Block sphalerite_ORE = new Block(FabricBlockSettings.of(Material.STONE).strength(h2h(3.5))); // ZnS, drops 7 sphalerite nuggets
 
-    private static final ConfiguredFeature<?, ?> ORE_SPODUMENE_Ov = Feature.ORE
-        .configure(new OreFeatureConfig(OreFeatureConfig.Rules.BASE_STONE_OVERWORLD, spodumene_ORE.getDefaultState(), 2))
-        .decorate(Decorator.RANGE.configure(new RangeDecoratorConfig(0, 0, 128)))
-        .spreadHorizontally()
-        .repeat(26); // number of veins per chunk
+    public static final ConfiguredFeature<?, ?> ORE_SPODUMENE_Ov = Feature.ORE.configure(new OreFeatureConfig(OreFeatureConfig.Rules.BASE_STONE_OVERWORLD, spodumene_ORE.getDefaultState(), 2)).decorate(Decorator.RANGE.configure(new RangeDecoratorConfig(0, 0, 128))).spreadHorizontally().repeat(26); // number of veins per chunk
 
     public static float h2h(double realHardness) { // returns: float minecraftHardness
         return (float) Math.pow((Math.E / 2.0) + 0.05, realHardness);
@@ -138,15 +131,6 @@ public class CheMC implements ModInitializer {
     public void registerBABI(String identifier, Block block_, ItemGroup gruop) { // Block And BlockItem; intended typo
         Registry.register(Registry.BLOCK, new Identifier("chemc", identifier), block_);
         Registry.register(Registry.ITEM, new Identifier("chemc", identifier), new BlockItem(block_, new FabricItemSettings().group(gruop)));
-    }
-
-    @Mixin(DefaultBiomeFeatures.class)
-    public class DefaultBiomeFeaturesMixin {
-
-        @Inject(method = "addDefaultOres(Lnet/minecraft/world/biome/GenerationSettings$Builder;)V", at = @At("TAIL"))
-        private static void addDefaultOres(GenerationSettings.Builder builder, CallbackInfo ci) {
-            builder.feature(GenerationStep.Feature.UNDERGROUND_ORES, CheMC.ORE_SPODUMENE_Ov);
-        }
     }
 
     @Override
