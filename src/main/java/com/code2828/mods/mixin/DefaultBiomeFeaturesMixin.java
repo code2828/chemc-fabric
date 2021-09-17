@@ -16,3 +16,13 @@ public class DefaultBiomeFeaturesMixin {
         builder.feature(GenerationStep.Feature.UNDERGROUND_ORES, CheMC.ORE_SPODUMENE_Ov);
     }
 }
+
+/*
+@Mixin(DefaultBiomeFeatures.class)
+public class DefaultBiomeFeaturesMixin {
+  @Inject(method = "addDefaultOres(Lnet/minecraft/world/biome/GenerationSettings$Builder;)V", at = @At("TAIL"))
+  private static void addDefaultOres(GenerationSettings.Builder builder, CallbackInfo ci) {
+    builder.feature(GenerationStep.Feature.UNDERGROUND_ORES, ExampleMod.ORE_WOOL_OVERWORLD);
+  }
+}
+*/

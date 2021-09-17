@@ -1,12 +1,8 @@
 package com.code2828.mods;
 
 import com.code2828.mods._Tools.*;
-import com.code2828.mods.mixin.*;
-
 import java.util.function.Supplier;
 import net.fabricmc.api.ModInitializer;
-import net.fabricmc.fabric.api.biome.v1.BiomeModifications;
-import net.fabricmc.fabric.api.biome.v1.BiomeSelectors;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.Block;
@@ -23,7 +19,6 @@ import net.minecraft.util.Identifier;
 import net.minecraft.util.Lazy;
 import net.minecraft.util.registry.BuiltinRegistries;
 import net.minecraft.util.registry.Registry;
-import net.minecraft.util.registry.RegistryKey;
 import net.minecraft.world.gen.decorator.Decorator;
 import net.minecraft.world.gen.decorator.RangeDecoratorConfig;
 import net.minecraft.world.gen.feature.ConfiguredFeature;
@@ -34,21 +29,21 @@ public class CheMC implements ModInitializer {
 
     public enum MetalMaterials implements ToolMaterial {
         // prettier-ignore-start
-        SOFT_METAL(
-            1, 24, 10, 0.1F, 25, () -> {
-                return Ingredient.ofItems(new ItemConvertible[] { CheMC.Li_INGOT });
-            }
-        ),
-        
-        COMMON_METAL(
-            1, 500, 7, 1, 17, () -> {
-                return Ingredient.ofItems(new ItemConvertible[] { CheMC.Zn_INGOT });
-            }
-        );
+            SOFT_METAL(
+                1, 24, 10, 0.1F, 25, () -> {
+                    return Ingredient.ofItems(new ItemConvertible[] { CheMC.Li_INGOT });
+                }
+            ),
+            
+            COMMON_METAL(
+                1, 500, 7, 1, 17, () -> {
+                    return Ingredient.ofItems(new ItemConvertible[] { CheMC.Zn_INGOT });
+                }
+            );
 
         // prettier-ignore-end
-        
-        private final int miningLevel;
+            
+            private final int miningLevel;
         private final int itemDurability;
         private final float miningSpeed;
         private final float attackDamage;
@@ -92,6 +87,7 @@ public class CheMC implements ModInitializer {
     public static final Item Li_INGOT = new Item(new FabricItemSettings().group(ItemGroup.MATERIALS));
     public static final SwordItem Li_SWORD = new SwordItem(MetalMaterials.SOFT_METAL, 3, 0.2F, new FabricItemSettings().group(ItemGroup.COMBAT).maxDamageIfAbsent(24));
     public static final _PickaxeItem Li_PICKAXE = new _PickaxeItem(MetalMaterials.SOFT_METAL, 2, 0.15F, new FabricItemSettings().group(ItemGroup.TOOLS).maxDamageIfAbsent(24));
+    public static final _PickaxeItem Zn_PICKAXE = new _PickaxeItem(MetalMaterials.COMMON_METAL, 4, 0.08F, new FabricItemSettings().group(ItemGroup.TOOLS).maxDamageIfAbsent(500));
     public static final _AxeItem Li_AXE = new _AxeItem(MetalMaterials.SOFT_METAL, 4, 0.1F, new FabricItemSettings().group(ItemGroup.TOOLS).maxDamageIfAbsent(24));
     public static final _HoeItem Li_HOE = new _HoeItem(MetalMaterials.SOFT_METAL, 1, 0.6F, new FabricItemSettings().group(ItemGroup.TOOLS).maxDamageIfAbsent(24));
     public static final ShovelItem Li_SHOVEL = new ShovelItem(MetalMaterials.SOFT_METAL, 1, 0.22F, new FabricItemSettings().group(ItemGroup.TOOLS).maxDamageIfAbsent(24));
@@ -118,7 +114,11 @@ public class CheMC implements ModInitializer {
     public static final Block Zn_BLOCK = new Block(FabricBlockSettings.of(Material.METAL).strength(h2h(2.5)));
     public static final Block sphalerite_ORE = new Block(FabricBlockSettings.of(Material.STONE).strength(h2h(3.5))); // ZnS, drops 7 sphalerite nuggets
 
-    public static final ConfiguredFeature<?, ?> ORE_SPODUMENE_Ov = Feature.ORE.configure(new OreFeatureConfig(OreFeatureConfig.Rules.BASE_STONE_OVERWORLD, spodumene_ORE.getDefaultState(), 2)).decorate(Decorator.RANGE.configure(new RangeDecoratorConfig(0, 0, 128))).spreadHorizontally().repeat(26); // number of veins per chunk
+    public static final ConfiguredFeature<?, ?> ORE_SPODUMENE_Ov = Feature.ORE
+        .configure(new OreFeatureConfig(OreFeatureConfig.Rules.BASE_STONE_OVERWORLD, spodumene_ORE.getDefaultState(), 2))
+        .decorate(Decorator.RANGE.configure(new RangeDecoratorConfig(0, 0, 128)))
+        .spreadHorizontally()
+        .repeat(26); // number of veins per chunk
 
     public static float h2h(double realHardness) { // returns: float minecraftHardness
         return (float) Math.pow((Math.E / 2.0) + 0.05, realHardness);
@@ -136,10 +136,11 @@ public class CheMC implements ModInitializer {
     @Override
     public void onInitialize() {
         Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, new Identifier("chemc", "ore_spodumene_ov"), ORE_SPODUMENE_Ov);
-
+        // Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, new Identifier("tutorial", "ore_wool_overworld"), ORE_WOOL_OVERWORLD);
         registerItem("lithium_ingot", Li_INGOT);
         registerItem("lithium_sword", Li_SWORD);
         registerItem("lithium_pickaxe", Li_PICKAXE);
+        registerItem("zinc_pickaxe",Zn_PICKAXE);
         registerItem("lithium_hoe", Li_HOE);
         registerItem("lithium_axe", Li_AXE);
         registerItem("lithium_shovel", Li_SHOVEL);
